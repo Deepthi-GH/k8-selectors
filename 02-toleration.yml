@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: taints and tolerations
+  name: taints-tolerations
   # These are deployment set labels.
   labels:
     purpose: tolerations-demo
     project: roboshop
 spec:
-  replicas: 4
+  replicas: 1
   selector: 
   # These labels are used to select pods.
     matchLabels:
