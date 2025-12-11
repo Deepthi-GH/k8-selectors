@@ -23,7 +23,16 @@ spec:
     spec:  
        nodeSelector:
          kubernetes.io/hostname=ip-192-168-19-106.ec2.internal  
-      containers:
-      - name: nginx
+       containers:
+        - name: nginx
       # Deployment respects image changes.
-        image: nginx:latest
+          image: nginx:latest
+       tolerations:
+       - key: "project"
+         operator: "Exists"
+         value: "roboshop"
+         effect: "NoSchedule"  
+
+          
+
+            
