@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: taints and tolerations
   # These are deployment set labels.
   labels:
-    purpose: dp-demo
+    purpose: tolerations-demo
     project: roboshop
 spec:
-  replicas: 1
+  replicas: 4
   selector: 
   # These labels are used to select pods.
     matchLabels:
-      purpose: headless-svc-demo
+      purpose: tolerations-demo
       project: roboshop  
 
   # pod definition    
   template:
     metadata:
       labels:
-        purpose: headless-svc-demo
+        purpose: tolerations-demo
         project: roboshop
     spec:    
       containers:
